@@ -23,8 +23,8 @@
  const canvas=document.getElementById('unity-canvas'),loading=document.getElementById('loading'),status=document.getElementById('status');
  canvas.addEventListener('touchmove',e=>e.preventDefault(),{passive:false});
  canvas.addEventListener('contextmenu',e=>e.preventDefault());
- const config={dataUrl:'Build/6eff0425753421fdcd6a45a3af2e1e1f.data.unityweb',frameworkUrl:'Build/ad4be89fa803a520037e363579ef2aba.framework.js.unityweb',codeUrl:'Build/e5e1af2232097c2f92c4ec365e0b1dbc.wasm.unityweb',streamingAssetsUrl:'StreamingAssets',companyName:'Dice Racers',productName:'Dice Racers',productVersion:'1.0',matchWebGLToCanvasSize:true,devicePixelRatio:Math.min(window.devicePixelRatio||1,1.5),showBanner:(text,type)=>{if(type==='error'){loading.style.display='flex';status.textContent=text;}}};
- const script=document.createElement('script');script.src='Build/bcab10f33090711bcab0df3004662e67.loader.js';
+ const config={dataUrl:'Build/3836acd43e826d3461ce428257d3a244.data.unityweb',frameworkUrl:'Build/ad4be89fa803a520037e363579ef2aba.framework.js.unityweb',codeUrl:'Build/ed8ffe6b9fee60f4aa54a9edc4c8e06d.wasm.unityweb',streamingAssetsUrl:'StreamingAssets',companyName:'Dice Racers',productName:'Dice Racers',productVersion:'1.0',matchWebGLToCanvasSize:true,devicePixelRatio:Math.min(window.devicePixelRatio||1,1.5),showBanner:(text,type)=>{if(type==='error'){loading.style.display='flex';status.textContent=text;}}};
+ const script=document.createElement('script');script.src='Build/1bc8f048807003d72d6b6abbc2477e5d.loader.js';
  function failure(message){loading.style.display='flex';status.textContent='The game could not start. '+message;const retry=document.createElement('button');retry.textContent='Try again';retry.onclick=()=>location.reload();loading.appendChild(retry);}
  script.onerror=()=>failure('Check your connection and try again.');
  script.onload=()=>createUnityInstance(canvas,config,p=>document.getElementById('fill').style.width=(p*100)+'%').then(instance=>{window.diceRacers=instance;loading.style.display='none';canvas.focus();}).catch(e=>failure(String(e)));
